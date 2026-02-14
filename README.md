@@ -565,7 +565,7 @@ Built with ❤️ for the Smart Bookmark Manager internship assessment.
 If you have any questions or run into issues:
 
 - Open an issue on GitHub
-- Contact: [your-email@example.com](mailto:your-email@example.com)
+- Contact: [akshatarora1299@gmail.com](mailto:akshatarora1299@gmail.com)
 - Documentation: [Next.js Docs](https://nextjs.org/docs) | [Supabase Docs](https://supabase.com/docs)
 
 ---
