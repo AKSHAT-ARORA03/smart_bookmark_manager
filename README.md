@@ -4,7 +4,7 @@ A modern, real-time bookmark management application with Google OAuth authentica
 
 ## 🌐 Live Demo
 
-**Live Application**: [https://your-app.vercel.app](https://your-app.vercel.app)
+**Live Application**: [https://smart-bookmark-manager-chi.vercel.app/](https://smart-bookmark-manager-chi.vercel.app/)
 
 **GitHub Repository**: [https://github.com/AKSHAT-ARORA03/smart-bookmark-app](https://github.com/AKSHAT-ARORA03/smart-bookmark-app)
 
