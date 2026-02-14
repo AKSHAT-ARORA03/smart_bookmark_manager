@@ -35,21 +35,21 @@ export function Statistics({ bookmarks }: StatsProps) {
       <Card className="p-4">
         <div className="text-center">
           <p className="text-2xl font-bold text-primary-600">{totalCount}</p>
-          <p className="text-sm text-gray-600">Total Bookmarks</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Total Bookmarks</p>
         </div>
       </Card>
 
       <Card className="p-4">
         <div className="text-center">
           <p className="text-2xl font-bold text-primary-600">{favoritesCount}</p>
-          <p className="text-sm text-gray-600">Favorites</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Favorites</p>
         </div>
       </Card>
 
       <Card className="p-4">
         <div className="text-center">
           <p className="text-2xl font-bold text-primary-600">{recentCount}</p>
-          <p className="text-sm text-gray-600">Added (Last 7 Days)</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">Added (Last 7 Days)</p>
         </div>
       </Card>
 
@@ -60,12 +60,12 @@ export function Statistics({ bookmarks }: StatsProps) {
               <p className="text-lg font-bold text-primary-600">
                 {topTags[0][0]}
               </p>
-              <p className="text-sm text-gray-600">Most Used Tag</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Most Used Tag</p>
             </>
           ) : (
             <>
               <p className="text-2xl font-bold text-gray-400">-</p>
-              <p className="text-sm text-gray-600">No Tags Yet</p>
+              <p classNameName="text-sm text-gray-600 dark:text-gray-400">No Tags Yet</p>
             </>
           )}
         </div>

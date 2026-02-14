@@ -65,7 +65,7 @@ export function BookmarkCard({ bookmark, onDelete, onEdit, onToggleFavorite }: B
                   target.style.display = 'none'
                 }}
               />
-              <h3 className="font-semibold text-lg text-gray-900 line-clamp-2">
+              <h3 className="font-semibold text-lg text-gray-900 dark:text-white line-clamp-2">
                 {bookmark.title}
               </h3>
             </div>
@@ -83,7 +83,7 @@ export function BookmarkCard({ bookmark, onDelete, onEdit, onToggleFavorite }: B
             {/* Description */}
             {bookmark.description && (
               <div className="mt-3">
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   {showFullDescription
                     ? bookmark.description
                     : truncateText(bookmark.description, 100)}
@@ -114,7 +114,7 @@ export function BookmarkCard({ bookmark, onDelete, onEdit, onToggleFavorite }: B
             )}
 
             {/* Date */}
-            <p className="text-xs text-gray-500 mt-3">
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
               {formatDate(bookmark.created_at)}
             </p>
           </div>

@@ -109,12 +109,12 @@ export function ImportButton({ userId, onSuccess }: ImportButtonProps) {
 
       <Modal isOpen={showModal} onClose={() => setShowModal(false)} title="Import Bookmarks">
         <div className="space-y-4">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
             Upload a JSON or CSV file containing your bookmarks.
           </p>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Select File
             </label>
             <input
@@ -122,21 +122,21 @@ export function ImportButton({ userId, onSuccess }: ImportButtonProps) {
               accept=".json,.csv"
               onChange={handleFileChange}
               disabled={loading}
-              className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100"
+              className="block w-full text-sm text-gray-500 dark:text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100 dark:file:bg-primary-900 dark:file:text-primary-200"
             />
           </div>
 
-          {loading && <p className="text-sm text-gray-600">Importing...</p>}
+          {loading && <p className="text-sm text-gray-600 dark:text-gray-400">Importing...</p>}
 
           {result && (
-            <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-              <p className="text-sm font-medium">Import Results:</p>
-              <p className="text-sm text-green-600">✓ {result.success} bookmarks imported successfully</p>
+            <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+              <p className="text-sm font-medium dark:text-white">Import Results:</p>
+              <p className="text-sm text-green-600 dark:text-green-400">✓ {result.success} bookmarks imported successfully</p>
               {result.failed > 0 && (
                 <>
-                  <p className="text-sm text-red-600">✗ {result.failed} bookmarks failed</p>
+                  <p className="text-sm text-red-600 dark:text-red-400">✗ {result.failed} bookmarks failed</p>
                   {result.errors.length > 0 && (
-                    <ul className="mt-2 text-xs text-gray-600 max-h-32 overflow-y-auto">
+                    <ul className="mt-2 text-xs text-gray-600 dark:text-gray-400 max-h-32 overflow-y-auto">
                       {result.errors.map((error, index) => (
                         <li key={index}>• {error}</li>
                       ))}

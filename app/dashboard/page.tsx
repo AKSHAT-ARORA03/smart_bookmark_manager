@@ -212,15 +212,15 @@ export default function Dashboard() {
   }
   
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
       <Navbar user={user} />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
             My Bookmarks
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-400">
             Save and organize your favorite websites
           </p>
         </div>
@@ -228,15 +228,15 @@ export default function Dashboard() {
         {/* Statistics */}
         <Statistics bookmarks={bookmarks} />
         
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8 transition-colors">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
             Add New Bookmark
           </h3>
           {user && <BookmarkForm userId={user.id} />}
         </div>
 
         {/* Search & Filter Section */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6 space-y-4">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-6 space-y-4 transition-colors">
           <SearchBar 
             value={searchQuery} 
             onChange={setSearchQuery}
@@ -253,7 +253,7 @@ export default function Dashboard() {
         </div>
         
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-xl font-semibold text-gray-900">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
             {showFavoritesOnly ? 'Favorite' : 'All'} Bookmarks ({filteredAndSortedBookmarks.length})
           </h3>
           <div className="flex gap-2">

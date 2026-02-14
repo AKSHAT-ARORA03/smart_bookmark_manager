@@ -32,7 +32,7 @@ export function FilterBar({
           id="sort"
           value={sortBy}
           onChange={(e) => onSortChange(e.target.value as SortOption)}
-          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white"
+          className="px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white dark:bg-gray-700"
         >
           <option value="newest">Newest First</option>
           <option value="oldest">Oldest First</option>
@@ -49,7 +49,7 @@ export function FilterBar({
             id="tag"
             value={selectedTag}
             onChange={(e) => onTagSelect(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white"
+            className="px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white dark:bg-gray-700"
           >
             <option value="">All Tags</option>
             {availableTags.map((tag) => (

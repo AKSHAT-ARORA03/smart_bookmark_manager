@@ -28,7 +28,7 @@ export function SearchBar({ value, onChange, placeholder = 'Search bookmarks...'
       </div>
       <input
         type="text"
-        className="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+        className="block w-full pl-10 pr-10 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}

@@ -16,10 +16,10 @@ export function BookmarkList({ bookmarks, onDelete, onEdit, onToggleFavorite }: 
     return (
       <div className="text-center py-12">
         <div className="text-6xl mb-4">📚</div>
-        <h3 className="text-xl font-semibold text-gray-700 mb-2">
+        <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
           No bookmarks yet
         </h3>
-        <p className="text-gray-500">
+        <p className="text-gray-500 dark:text-gray-400">
           Add your first bookmark to get started!
         </p>
       </div>
