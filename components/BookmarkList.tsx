@@ -7,9 +7,11 @@ import { BookmarkCard } from './BookmarkCard'
 interface BookmarkListProps {
   bookmarks: Bookmark[]
   onDelete: (id: string) => void
+  onEdit: (bookmark: Bookmark) => void
+  onToggleFavorite: (id: string, isFavorite: boolean) => void
 }
 
-export function BookmarkList({ bookmarks, onDelete }: BookmarkListProps) {
+export function BookmarkList({ bookmarks, onDelete, onEdit, onToggleFavorite }: BookmarkListProps) {
   if (bookmarks.length === 0) {
     return (
       <div className="text-center py-12">
@@ -31,6 +33,8 @@ export function BookmarkList({ bookmarks, onDelete }: BookmarkListProps) {
           key={bookmark.id}
           bookmark={bookmark}
           onDelete={onDelete}
+          onEdit={onEdit}
+          onToggleFavorite={onToggleFavorite}
         />
       ))}
     </div>

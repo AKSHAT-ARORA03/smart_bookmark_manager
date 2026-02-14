@@ -14,10 +14,21 @@ interface BookmarkFormProps {
 export function BookmarkForm({ userId, onSuccess }: BookmarkFormProps) {
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
+  const [description, setDescription] = useState('')
+  const [tagsInput, setTagsInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string>('')
   
   const supabase = createClient()
+
+  const getFaviconUrl = (url: string) => {
+    try {
+      const domain = new URL(url).hostname.replace('www.', '')
+      return `https://www.google.com/s2/favicons?domain=${domain}&sz=32`
+    } catch {
+      return null
+    }
+  }
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -26,6 +37,11 @@ export function BookmarkForm({ userId, onSuccess }: BookmarkFormProps) {
     
     try {
       const validatedUrl = validateUrl(url)
+      const tags = tagsInput
+        .split(',')
+        .map(tag => tag.trim())
+        .filter(tag => tag.length > 0)
+      const faviconUrl = getFaviconUrl(validatedUrl)
       
       const { error: insertError } = await supabase
         .from('bookmarks')
@@ -34,6 +50,10 @@ export function BookmarkForm({ userId, onSuccess }: BookmarkFormProps) {
             user_id: userId,
             title: title.trim(),
             url: validatedUrl,
+            description: description.trim() || undefined,
+            tags: tags.length > 0 ? tags : [],
+            favicon_url: faviconUrl,
+            is_favorite: false
           },
         ])
       
@@ -42,6 +62,8 @@ export function BookmarkForm({ userId, onSuccess }: BookmarkFormProps) {
       // Clear form
       setTitle('')
       setUrl('')
+      setDescription('')
+      setTagsInput('')
       onSuccess?.()
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to add bookmark')
@@ -71,6 +93,28 @@ export function BookmarkForm({ userId, onSuccess }: BookmarkFormProps) {
           required
         />
       </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Description (Optional)
+        </label>
+        <textarea
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+          placeholder="Add notes about this bookmark..."
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          rows={3}
+        />
+      </div>
+
+      <Input
+        label="Tags (comma separated)"
+        type="text"
+        placeholder="work, personal, learning"
+        value={tagsInput}
+        onChange={(e) => setTagsInput(e.target.value)}
+      />
+
       <Button type="submit" loading={loading} className="w-full md:w-auto">
         Add Bookmark
       </Button>

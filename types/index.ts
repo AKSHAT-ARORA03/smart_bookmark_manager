@@ -3,6 +3,10 @@ export interface Bookmark {
   user_id: string;
   title: string;
   url: string;
+  description?: string;
+  tags?: string[];
+  is_favorite?: boolean;
+  favicon_url?: string;
   created_at: string;
   updated_at: string;
 }

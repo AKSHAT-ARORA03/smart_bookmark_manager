@@ -2,11 +2,15 @@
 -- Run this in your Supabase SQL Editor
 
 -- Create bookmarks table
-create table bookmarks (
+create table if not exists bookmarks (
   id uuid default gen_random_uuid() primary key,
   user_id uuid references auth.users not null,
   title text not null,
   url text not null,
+  description text,
+  tags text[] default '{}',
+  is_favorite boolean default false,
+  favicon_url text,
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
   updated_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
