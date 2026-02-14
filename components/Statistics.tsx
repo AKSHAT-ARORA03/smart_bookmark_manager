@@ -65,7 +65,7 @@ export function Statistics({ bookmarks }: StatsProps) {
           ) : (
             <>
               <p className="text-2xl font-bold text-gray-400">-</p>
-              <p classNameName="text-sm text-gray-600 dark:text-gray-400">No Tags Yet</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">No Tags Yet</p>
             </>
           )}
         </div>
