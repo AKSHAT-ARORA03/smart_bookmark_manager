@@ -1,9 +1,3 @@
-import { type ClassValue, clsx } from 'clsx'
-
-export function cn(...inputs: ClassValue[]) {
-  return clsx(inputs)
-}
-
 export function validateUrl(url: string): string {
   let validUrl = url.trim()
   
